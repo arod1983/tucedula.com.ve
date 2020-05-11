@@ -1,0 +1,21 @@
+{% extends "index.html"%}
+{% load static %}
+
+{% block main %}
+
+<div>
+<form action="/buscar/" method="GET">
+<div class="form-group floating-label-form-group controls mb-0 pb-2">
+    <label>Cedula</label><input class="form-control" id="ced" name="ced" type="text" placeholder="Cedula" required="required" data-validation-required-message="Please enter your cedula." />
+    <p class="help-block text-white"></p>
+</div>
+{% comment %} <input type="text" name="ced"> {% endcomment %}
+<button class="btn btn-primary btn-xl" id="btn_buscar_cedula" type="submit" value="Buscar">Buscar</button>
+</form>
+</div>
+
+{% endblock %} 
+
+ 
+
+

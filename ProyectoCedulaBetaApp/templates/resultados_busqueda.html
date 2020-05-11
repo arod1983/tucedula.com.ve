@@ -1,0 +1,39 @@
+{% extends "index.html"%}
+{% load static %}
+
+{% block main %}
+<div>
+<p>Estas buscando: <strong>{{query}}</strong></p>
+        {% if cedulas%}
+            <p>Cedulas encontradas: {{cedulas|length}} cedulas</p>  
+            <table class="table">
+            <thead>
+                <th> Nombres y Apellidos </th>
+                <th> Cedula </th>
+                <th> Estado </th>
+                <th> Municipio </th>
+                <th> Parroquia </th>
+            </thead>
+            <tbody>
+                    {% for ced in cedulas %}
+                    <tr>
+                        <td>{{ced.nombre}}</td>
+                        <td>{{ced.cedula}}</td>
+                        <td>{{ced.estado}}</td>
+                        <td>{{ced.municipio}}</td>
+                        <td>{{ced.parroquia}}</td>
+                    </tr>
+                    {% endfor %}
+                
+            </tbody>
+            </table>
+        {% else %}
+            <p>Esta Cedula no existe</p> 
+        {% endif %}
+        <form action="/" method="GET">
+        <button class="btn btn-primary btn-xl" id="btn_buscar_regresar" type="submit" value="Regresar">Regresar</button>
+        </form>
+</div>
+{% endblock %} 
+
+
